@@ -185,3 +185,10 @@ body{
 #img:hover{
   transform: scale(1.5);
 }
+
+.svg{
+  width: 240px;
+}
+.fonts{
+  background: #333;
+}
