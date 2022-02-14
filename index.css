@@ -177,3 +177,11 @@ body{
 .pushable:focus:not(:focus-visible) {
   outline: none;
 }
+
+#img {
+  transition: transform 250ms;
+}
+
+#img:hover{
+  transform: scale(1.5);
+}
