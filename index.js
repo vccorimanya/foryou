@@ -4,7 +4,7 @@ const img = document.querySelector('#img')
 
 const svg = document.querySelector('.svg');
 
-const palabras = ['Michi', 'Gato', 'Neko', 'Michi', 'Gato', 'Neko']
+const palabras = ['Michi', 'Gato', 'Neko', '고양이', 'gatto', 'con', 'Cat', 'Kitten', '猫', 'ネコ']
 const rutas = [
   './feliz.png',
   './cara-de-gato.png',
@@ -12,6 +12,10 @@ const rutas = [
   './gato-con-raquetas-de-nieve.png',
   './gato-negro.png',
   './gato.png',
+  './gato-negro1.png',
+  './gato-morado.png',
+  './cara-de-gato.png',
+  './idioma-celtico.png',
 ]
 
 const colors = [
@@ -39,7 +43,7 @@ function getRandom(min, max){
 let contador = 0
 
 button.addEventListener('click', ()=> {
-  const random= getRandom(0,6)
+  const random= getRandom(0,10)
   let news = palabras[random]
   let ruta = rutas[random]
   let newcolor= colors[random]
