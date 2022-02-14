@@ -1,0 +1,176 @@
+:root{
+  --rosa: #ff77a5;
+  --green-sky: #59e9c1;
+}
+
+body{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #0E141B;
+  font-family: "Wotfard",Futura,-apple-system,sans-serif;
+
+}
+/*  */
+@keyframes slide-in{
+  from{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right{
+  from{
+    transform: translateX(-100%);
+    opacity: 0;
+    animation-timing-function: linear;
+  }
+  to{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+/*  */
+.first_circle {
+  width: 10rem;
+  height: 10rem;
+  background: var(--rosa);
+  clip-path: circle(50%);;
+}
+
+.first_circle {
+  animation: slide-in 2000ms;
+  animation-iteration-count: 3;
+}
+
+/*  */
+
+.second_circle{
+  width: 10rem;
+  height: 10rem;
+  background-color: var(--rosa);
+  clip-path: circle(50%);
+  margin-right: 0;
+
+}
+.second_circle{
+  animation: slide-in-right 1500ms;
+}
+
+/*  */
+
+@keyframes spinner{
+  from {
+    transform: rotate(0turn);
+  }
+  to{
+    transform: rotate(1turn);
+  }
+}
+
+.spin{
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(50deg, var(--rosa), var(--green-sky));
+}
+
+.spin{
+  animation: spinner 3000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.pushable{
+  position: relative;
+  background: transparent;
+  border-radius: .8rem;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  outline: none;
+  transition: filter 200ms;
+}
+
+.front{
+  display: block;
+  position: relative;
+  padding: 12px 42px;
+  border-radius: .8rem;
+  font-size: 1.5rem;
+  background: hsl(345deg 100% 47%);
+  color: white;
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.shadow{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: .8rem;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+  filter: blur(4px);
+}
+
+.edge{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: .8rem;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.pushable:hover{
+  /* transition: filter 250ms; */
+  filter: brightness(110%);
+}
+
+.pushable:hover .front{
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.pushable:active .front{
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+ .pushable:hover .shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+ .pushable:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
